@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unused_local_variable, await_only_futures, deprecated_member_use
+
 import 'dart:convert';
 
 import 'package:marked/Constants/MyConstants.dart';
@@ -30,9 +32,9 @@ class MySharedPreferennce {
   Future setFirstTime(bool isFirst) async {
     var result;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs?.setBool(Is_First_Time, isFirst).then((onValue) {
+    await prefs?.setBool(Is_First_Time, isFirst)?.then((onValue) {
       result = true;
-    }).catchError((onError) {
+    })?.catchError((onError) {
       result = false;
     });
   }
@@ -79,10 +81,10 @@ Future LoginSession (LoginModel logInResponse) async {
 
     MyConstants.loginModel=logInResponse;
 
-    await prefs?.setString(User_Login_Data, json.encode(logInResponse)).then((onValue) {
+    await prefs?.setString(User_Login_Data, json.encode(logInResponse))?.then((onValue) {
       print("savingResponse : Saved Successfully");
       result = true;
-    }).catchError((onError) {
+    })?.catchError((onError) {
       print("savingResponse : Failed to Save");
       result = false;
     });

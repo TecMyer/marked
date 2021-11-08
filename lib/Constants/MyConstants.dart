@@ -79,11 +79,11 @@ class MyConstants {
   static showAlertDialog(BuildContext context) {
 
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("No"),
       onPressed:  () {Navigator.pop(context);},
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
       child: Text("Yes"),
       onPressed:  () async{
         // MyConstants.showLoadingBar(context);

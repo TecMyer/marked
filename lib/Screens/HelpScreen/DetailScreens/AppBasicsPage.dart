@@ -19,6 +19,7 @@ class _AppBasicsPageState extends State<AppBasicsPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

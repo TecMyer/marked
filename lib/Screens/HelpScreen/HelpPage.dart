@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:marked/Constants/MyConstants.dart';
-import 'package:marked/Screens/SearchScreens/SearchPage.dart';
+// import 'package:marked/Screens/SearchScreens/SearchPage.dart';
 import 'package:marked/Utils/HexColor.dart';
-import 'package:marked/drawer/Drawer.dart';
+// import 'package:marked/drawer/Drawer.dart';
 
 class HelpPage extends StatefulWidget {
 
@@ -21,6 +21,7 @@ class _HelpPageState extends State<HelpPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

@@ -14,6 +14,7 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab>  with AutomaticKeepAliveClientMixin<ProfileTab> {
 
   @override
+  // ignore: todo
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
@@ -24,6 +25,7 @@ class _ProfileTabState extends State<ProfileTab>  with AutomaticKeepAliveClientM
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

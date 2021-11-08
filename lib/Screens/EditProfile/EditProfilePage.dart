@@ -1,5 +1,7 @@
+// ignore_for_file: deprecated_member_use, unused_local_variable
+
 import 'dart:convert';
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,7 +12,7 @@ import 'package:marked/Constants/MyConstants.dart';
 import 'package:marked/Models/LoginModel.dart';
 import 'package:marked/Preferences/MySharedPreference.dart';
 import 'package:marked/Utils/HexColor.dart';
-import 'package:marked/drawer/Drawer.dart';
+// import 'package:marked/drawer/Drawer.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -50,6 +52,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

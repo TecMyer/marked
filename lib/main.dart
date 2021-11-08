@@ -1,4 +1,6 @@
-import 'dart:convert';
+// import 'dart:convert';
+
+// ignore_for_file: deprecated_member_use
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -111,6 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _startTimer(context);

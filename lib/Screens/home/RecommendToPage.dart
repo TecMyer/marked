@@ -22,6 +22,7 @@ class _RecommendToPageState extends State<RecommendToPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,6 @@
 
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:marked/Constants/MyConstants.dart';
@@ -6,7 +8,7 @@ import 'package:marked/Screens/home/tabs/FavoriteTab.dart';
 import 'package:marked/Screens/home/tabs/HomeTab.dart';
 import 'package:marked/Screens/home/tabs/NotificationTab.dart';
 import 'package:marked/Screens/home/tabs/ProfileTab.dart';
-import 'package:marked/Utils/HexColor.dart';
+// import 'package:marked/Utils/HexColor.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -30,6 +32,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       body:_children[_currentIndex],

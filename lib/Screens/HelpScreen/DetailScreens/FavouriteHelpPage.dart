@@ -21,6 +21,7 @@ class _FavouritesPageState extends State<FavouritesHelpPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:convert';
 
 import 'package:connectivity/connectivity.dart';
@@ -19,6 +21,7 @@ class NotificationTab extends StatefulWidget {
 class _NotificationTabState extends State<NotificationTab>  with AutomaticKeepAliveClientMixin<NotificationTab> {
 
   @override
+  // ignore: todo
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
@@ -38,6 +41,7 @@ class _NotificationTabState extends State<NotificationTab>  with AutomaticKeepAl
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

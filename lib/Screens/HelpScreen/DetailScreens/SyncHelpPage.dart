@@ -19,6 +19,7 @@ class _SyncHelpPageState extends State<SyncHelpPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

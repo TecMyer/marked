@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:convert';
 
 import 'package:connectivity/connectivity.dart';
@@ -20,6 +22,7 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> with AutomaticKeepAliveClientMixin<HomeTab> {
 
   @override
+  // ignore: todo
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
@@ -40,6 +43,7 @@ class _HomeTabState extends State<HomeTab> with AutomaticKeepAliveClientMixin<Ho
   Widget build(BuildContext context) {
     super.build(context);
     final orientation = MediaQuery.of(context).orientation;
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,

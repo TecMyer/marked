@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:convert';
 
 import 'package:connectivity/connectivity.dart';
@@ -7,7 +9,7 @@ import 'package:marked/ApiHandler/ApiCall.dart';
 
 import 'package:marked/Constants/MyConstants.dart';
 import 'package:marked/Models/ArticleModel.dart';
-import 'package:marked/Preferences/MySharedPreference.dart';
+// import 'package:marked/Preferences/MySharedPreference.dart';
 import 'package:marked/Screens/SearchScreens/SearchPage.dart';
 import 'package:marked/Utils/HexColor.dart';
 import 'package:marked/drawer/Drawer.dart';
@@ -44,6 +46,7 @@ class _FavouritePageState extends State<FavouritePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: todo
     // TODO: implement build
     return Scaffold(
       key: _scaffoldKey,
