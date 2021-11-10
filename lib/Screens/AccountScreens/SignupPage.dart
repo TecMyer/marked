@@ -154,38 +154,38 @@ class _SignupState extends State<SignupPage> {
 
                     SizedBox(height: height/30,),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('OR',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: height/35),),
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: [
+                    //     Text('OR',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: height/35),),
+                    //   ],
+                    // ),
 
                     SizedBox(height: height/30,),
 
-                    GestureDetector(
-                      onTap: (){
-                        _facebookLogin(context);
-                      },
-                      child:  Container(
-                          width: width,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: HexToColor(MyConstants.fbClr)),
-                              borderRadius: BorderRadius.all(Radius.circular(width/10))
-                          ),
-                          child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset('assets/fb.png',height: 30,),
-                                  SizedBox(width: width/15,),
-                                  Text('Facebook',style: TextStyle(fontSize: width/20,fontWeight: FontWeight.w600,color: HexToColor(MyConstants.fbClr)),)
-                                ],
-                              )
-                          )
-                      ),
-                    ),
+                    // GestureDetector(
+                    //   onTap: (){
+                    //     _facebookLogin(context);
+                    //   },
+                    //   child:  Container(
+                    //       width: width,
+                    //       height: 40,
+                    //       decoration: BoxDecoration(
+                    //           border: Border.all(color: HexToColor(MyConstants.fbClr)),
+                    //           borderRadius: BorderRadius.all(Radius.circular(width/10))
+                    //       ),
+                    //       child: Center(
+                    //           child: Row(
+                    //             mainAxisAlignment: MainAxisAlignment.center,
+                    //             children: [
+                    //               Image.asset('assets/fb.png',height: 30,),
+                    //               SizedBox(width: width/15,),
+                    //               Text('Facebook',style: TextStyle(fontSize: width/20,fontWeight: FontWeight.w600,color: HexToColor(MyConstants.fbClr)),)
+                    //             ],
+                    //           )
+                    //       )
+                    //   ),
+                    // ),
 
                     // SizedBox(height: height/40,),
                     //
