@@ -15,7 +15,6 @@ import 'package:marked/Preferences/MySharedPreference.dart';
 import 'package:marked/Utils/HexColor.dart';
 
 class LoginPage extends StatefulWidget {
-
   static final FacebookLogin facebookSignIn = new FacebookLogin();
 
   @override
@@ -23,9 +22,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginState extends State<LoginPage> {
-
-  double height = MyConstants.height,
-      width = MyConstants.width;
+  double height = MyConstants.height, width = MyConstants.width;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   MySharedPreferennce mySharedPreferennce = new MySharedPreferennce();
   // bool _validate = false;
@@ -51,34 +48,45 @@ class _LoginState extends State<LoginPage> {
               color: HexToColor(MyConstants.appbarClrs[1]),
             ),
             Positioned(
-                top: height*0.02,
-                left: width*0.05,
-                child: Image.asset('assets/logo.png',height: height*0.07,)
-            ),
+                top: height * 0.02,
+                left: width * 0.05,
+                child: Image.asset(
+                  'assets/light_logo.png',
+                  height: height * 0.07,
+                )),
             Positioned(
                 top: 0,
                 right: 0,
-                child: Image.asset('assets/deco.png',)
-            ),
+                child: Image.asset(
+                  'assets/deco.png',
+                )),
             Container(
-              margin: EdgeInsets.only(top: height*0.12),
+              margin: EdgeInsets.only(top: height * 0.12),
               width: width,
-              height: height*0.88,
+              height: height * 0.88,
               decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(width*0.3)),
+                  borderRadius:
+                      BorderRadius.only(topRight: Radius.circular(width * 0.3)),
                   image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage('assets/gray_bg.png')
-                  )
-              ),
-              padding: EdgeInsets.symmetric(horizontal: width/10,vertical: height/25),
+                      image: AssetImage('assets/gray_bg.png'))),
+              padding: EdgeInsets.symmetric(
+                  horizontal: width / 10, vertical: height / 25),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Welcome Back',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: height/28),),
-                    SizedBox(height: height/30,),
+                    Text(
+                      'Welcome Back',
+                      style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold,
+                          fontSize: height / 28),
+                    ),
+                    SizedBox(
+                      height: height / 30,
+                    ),
 
                     TextField(
                       keyboardType: TextInputType.emailAddress,
@@ -100,18 +108,33 @@ class _LoginState extends State<LoginPage> {
                       ),
                     ),
 
-                    SizedBox(height: height/30,),
+                    SizedBox(
+                      height: height / 30,
+                    ),
 
                     RaisedButton(
                       onPressed: () {
-                        if( _emailController.text.isNotEmpty && _passController.text.isNotEmpty){
-                          if(EmailValidator.validate(_emailController.text) ){
-                              loginUser(context);
-                          }else{
-                            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("Enter Valid Email.", style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+                        if (_emailController.text.isNotEmpty &&
+                            _passController.text.isNotEmpty) {
+                          if (EmailValidator.validate(_emailController.text)) {
+                            loginUser(context);
+                          } else {
+                            _scaffoldKey.currentState.showSnackBar(SnackBar(
+                              content: Text(
+                                "Enter Valid Email.",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              backgroundColor: Colors.red,
+                            ));
                           }
-                        }else{
-                          _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("Some fields are missing. Fill all fields", style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+                        } else {
+                          _scaffoldKey.currentState.showSnackBar(SnackBar(
+                            content: Text(
+                              "Some fields are missing. Fill all fields",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            backgroundColor: Colors.red,
+                          ));
                         }
                       },
                       shape: RoundedRectangleBorder(
@@ -120,41 +143,57 @@ class _LoginState extends State<LoginPage> {
                       child: Container(
                           width: width,
                           height: 40,
-                          child: Center(child: Text('Sign In',style: TextStyle(fontSize: width/20,fontWeight: FontWeight.w600),))),
+                          child: Center(
+                              child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                                fontSize: width / 20,
+                                fontWeight: FontWeight.w600),
+                          ))),
                       textColor: Colors.white,
                       color: HexToColor(MyConstants.redClr),
                     ),
-                    SizedBox(height: height/30,),
+                    SizedBox(
+                      height: height / 30,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('OR',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: height/35),),
+                        Text(
+                          'OR',
+                          style: TextStyle(
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold,
+                              fontSize: height / 35),
+                        ),
                       ],
                     ),
-                    SizedBox(height: height/30,),
-                    GestureDetector(
-                      onTap: (){
-                        _facebookLogin(context);
-                      },
-                      child: Container(
-                          width: width,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: HexToColor(MyConstants.fbClr)),
-                              borderRadius: BorderRadius.all(Radius.circular(width/10))
-                          ),
-                          child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset('assets/fb.png',height: 30,),
-                                  SizedBox(width: width/15,),
-                                  Text('Facebook',style: TextStyle(fontSize: width/20,fontWeight: FontWeight.w600,color: HexToColor(MyConstants.fbClr)),)
-                                ],
-                              )
-                          )
-                      ),
+                    SizedBox(
+                      height: height / 50,
                     ),
+                    // GestureDetector(
+                    //   onTap: (){
+                    //     _facebookLogin(context);
+                    //   },
+                    //   child: Container(
+                    //       width: width,
+                    //       height: 40,
+                    //       decoration: BoxDecoration(
+                    //           border: Border.all(color: HexToColor(MyConstants.fbClr)),
+                    //           borderRadius: BorderRadius.all(Radius.circular(width/10))
+                    //       ),
+                    //       child: Center(
+                    //           child: Row(
+                    //             mainAxisAlignment: MainAxisAlignment.center,
+                    //             children: [
+                    //               Image.asset('assets/fb.png',height: 30,),
+                    //               SizedBox(width: width/15,),
+                    //               Text('Facebook',style: TextStyle(fontSize: width/20,fontWeight: FontWeight.w600,color: HexToColor(MyConstants.fbClr)),)
+                    //             ],
+                    //           )
+                    //       )
+                    //   ),
+                    // ),
                     // SizedBox(height: height/40,),
                     // GestureDetector(
                     //   onTap: (){
@@ -180,19 +219,35 @@ class _LoginState extends State<LoginPage> {
                     //       )
                     //   ),
                     // ),
-                    SizedBox(height: height/30,),
+                    SizedBox(
+                      height: height / 50,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           children: [
-                            Text('Don\'t have an account?',style: TextStyle(color: Colors.black26,fontWeight: FontWeight.bold,fontSize: height/50),),
+                            Text(
+                              'Don\'t have an account?',
+                              style: TextStyle(
+                                  color: Colors.black26,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: height / 50),
+                            ),
+                            SizedBox(
+                              height: height / 60,
+                            ),
                             GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   Navigator.pushNamed(context, '/signup');
                                 },
-                                child: Text('Sign Up',style: TextStyle(color:HexToColor(MyConstants.redClr),fontWeight: FontWeight.bold,fontSize: height/28),)
-                            ),
+                                child: Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                      color: HexToColor(MyConstants.redClr),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: height / 28),
+                                )),
                           ],
                         ),
                       ],
@@ -207,39 +262,56 @@ class _LoginState extends State<LoginPage> {
     );
   }
 
-
-  void loginUser(BuildContext context)async {
+  void loginUser(BuildContext context) async {
     FocusScope.of(context).unfocus();
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi) {
       MyConstants.showLoadingBar(context);
-      ApiCall.login(_emailController.text, _passController.text).then((value) async {
+      ApiCall.login(_emailController.text, _passController.text)
+          .then((value) async {
         MyConstants.hideLoadingBar();
-        if (value.statusCode==200) {
-          if(json.decode(value.body)["success"]=="true"){
+        if (value.statusCode == 200) {
+          if (json.decode(value.body)["success"] == "true") {
             loginModel = LoginModel.fromJson(json.decode(value.body));
             final result = await mySharedPreferennce.LoginSession(loginModel);
             print("savingResponse" + result.toString());
-            Navigator.of(context).pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false);
-          }else {
-            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(jsonDecode(value.body)['message'], style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                '/home', (Route<dynamic> route) => false);
+          } else {
+            _scaffoldKey.currentState.showSnackBar(SnackBar(
+              content: Text(
+                jsonDecode(value.body)['message'],
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.red,
+            ));
           }
         } else {
-          _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(jsonDecode(value.body)['message'], style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+          _scaffoldKey.currentState.showSnackBar(SnackBar(
+            content: Text(
+              jsonDecode(value.body)['message'],
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.red,
+          ));
         }
-      }).catchError((onError) {
-
-      });
+      }).catchError((onError) {});
     } else {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(MyConstants.noInternet, style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(
+          MyConstants.noInternet,
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.red,
+      ));
     }
   }
 
-   _facebookLogin(BuildContext context) async {
+  _facebookLogin(BuildContext context) async {
     FocusScope.of(context).unfocus();
     final FacebookLoginResult result =
-    await LoginPage.facebookSignIn.logIn(['email','public_profile']);
+        await LoginPage.facebookSignIn.logIn(['email', 'public_profile']);
 
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
@@ -248,27 +320,33 @@ class _LoginState extends State<LoginPage> {
         // ignore: unnecessary_statements
         accessToken.permissions;
 
-        var graphResponse = await http.get(Uri.parse('https://graph.facebook.com/v2.12/me?fields=name,first_name,picture,last_name,email&access_token=${accessToken.token}'));
+        var graphResponse = await http.get(Uri.parse(
+            'https://graph.facebook.com/v2.12/me?fields=name,first_name,picture,last_name,email&access_token=${accessToken.token}'));
         Map<String, dynamic> user = json.decode(graphResponse.body);
-        Map<String,dynamic> picture = user['picture'];
-        Map<String,dynamic> data = picture['data'];
+        Map<String, dynamic> picture = user['picture'];
+        Map<String, dynamic> data = picture['data'];
 
-        await ApiCall.fbLogin(user['id'], user['first_name'], user['last_name'], user['email'], data['url']).then((value) async {
+        await ApiCall.fbLogin(user['id'], user['first_name'], user['last_name'],
+                user['email'], data['url'])
+            .then((value) async {
           MyConstants.hideLoadingBar();
-          if (value.statusCode==200) {
-            facebookLoginModel=LoginModel.fromJson(jsonDecode(value.body));
-            final result = await mySharedPreferennce.LoginSession(facebookLoginModel);
+          if (value.statusCode == 200) {
+            facebookLoginModel = LoginModel.fromJson(jsonDecode(value.body));
+            final result =
+                await mySharedPreferennce.LoginSession(facebookLoginModel);
             print("savingResponse" + result.toString());
-            Navigator.of(context).pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false);
-
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                '/home', (Route<dynamic> route) => false);
           } else {
-            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(jsonDecode(value.body)['message'], style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+            _scaffoldKey.currentState.showSnackBar(SnackBar(
+              content: Text(
+                jsonDecode(value.body)['message'],
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.red,
+            ));
           }
-        }).catchError((onError) {
-
-        });
-
-
+        }).catchError((onError) {});
 
         // var graphResponseFeed = await http.get('https://graph.facebook.com/v2.12/me/feed?fields=message&access_token=${accessToken.token}');
         // var data1 = json.decode(graphResponseFeed.body);
@@ -308,13 +386,24 @@ class _LoginState extends State<LoginPage> {
         // }
         break;
       case FacebookLoginStatus.cancelledByUser:
-        _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Login cancelled by the user.', style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            'Login cancelled by the user.',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.red,
+        ));
         break;
       case FacebookLoginStatus.error:
-        _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Something went wrong with the login process.\n'
-            'Here\'s the error Facebook gave us: ${result.toString()}', style: TextStyle(color: Colors.white),), backgroundColor: Colors.red,));
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(
+            'Something went wrong with the login process.\n'
+            'Here\'s the error Facebook gave us: ${result.toString()}',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.red,
+        ));
         break;
     }
   }
-
 }

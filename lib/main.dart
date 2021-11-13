@@ -46,7 +46,6 @@ import 'drawer/Lists/sharedtome/SharedPage.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -89,11 +88,10 @@ class MyApp extends StatelessWidget {
         '/manageSiteLogin': (context) => ManageSiteLoginPage(),
         '/arsTechnica': (context) => ArsTechnicaLoginPage(),
       },
-
       debugShowCheckedModeBanner: false,
       title: 'Social Saver',
       theme: ThemeData(
-        primaryColor:Colors.grey,
+        primaryColor: Colors.grey,
 //        iconTheme: IconThemeData(color: HexToColor(MyConstants.green)),
         accentColor: Colors.black,
         hintColor: Colors.grey,
@@ -109,8 +107,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   void initState() {
     // ignore: todo
@@ -122,40 +118,41 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    MyConstants.width=MediaQuery.of(context).size.width;
-    MyConstants.height=MediaQuery.of(context).size.height;
-
-
+    MyConstants.width = MediaQuery.of(context).size.width;
+    MyConstants.height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body:Container(
-        width: MyConstants.width,
-        height:  MyConstants.height,
-        child: Image.asset('assets/splash.png',width: MyConstants.width, height:  MyConstants.height,fit: BoxFit.fill,),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 150,
+          child: Image.asset(
+            'assets/Logo-2.png',
+            fit: BoxFit.fill,
+          ),
+        ),
       ),
     );
   }
 
-
   _startTimer(BuildContext context) async {
-    Future.delayed(Duration(seconds: 3),navigationPage);
+    Future.delayed(Duration(seconds: 3), navigationPage);
   }
 
   navigationPage() async {
-    MySharedPreferennce mySharedPreference=MySharedPreferennce();
-    bool data=await mySharedPreference.getisFirstTime();
-    if(data==null || data){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BoardingPage()));
-    }else{
-      var data=await mySharedPreference.getUserrLogIn();
-      print("user Data: "+data.toString());
-      if(data.toString()!="logout"){
+    MySharedPreferennce mySharedPreference = MySharedPreferennce();
+    bool data = await mySharedPreference.getisFirstTime();
+    if (data == null || data) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => BoardingPage()));
+    } else {
+      var data = await mySharedPreference.getUserrLogIn();
+      print("user Data: " + data.toString());
+      if (data.toString() != "logout") {
         Navigator.pushReplacementNamed(context, '/home');
       } else {
         Navigator.pushReplacementNamed(context, '/login');
       }
     }
-
   }
-
 }
