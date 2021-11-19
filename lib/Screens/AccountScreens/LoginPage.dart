@@ -10,7 +10,7 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:marked/ApiHandler/ApiCall.dart';
 import 'package:marked/Constants/MyConstants.dart';
 import 'package:marked/Models/LoginModel.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
 import 'package:marked/Preferences/MySharedPreference.dart';
 import 'package:marked/Utils/HexColor.dart';
 
@@ -308,102 +308,102 @@ class _LoginState extends State<LoginPage> {
     }
   }
 
-  _facebookLogin(BuildContext context) async {
-    FocusScope.of(context).unfocus();
-    final FacebookLoginResult result =
-        await LoginPage.facebookSignIn.logIn(['email', 'public_profile']);
+  // _facebookLogin(BuildContext context) async {
+  //   FocusScope.of(context).unfocus();
+  //   final FacebookLoginResult result =
+  //       await LoginPage.facebookSignIn.logIn(['email', 'public_profile']);
 
-    switch (result.status) {
-      case FacebookLoginStatus.loggedIn:
-        MyConstants.showLoadingBar(context);
-        final FacebookAccessToken accessToken = result.accessToken;
-        // ignore: unnecessary_statements
-        accessToken.permissions;
+  //   switch (result.status) {
+  //     case FacebookLoginStatus.loggedIn:
+  //       MyConstants.showLoadingBar(context);
+  //       final FacebookAccessToken accessToken = result.accessToken;
+  //       // ignore: unnecessary_statements
+  //       accessToken.permissions;
 
-        var graphResponse = await http.get(Uri.parse(
-            'https://graph.facebook.com/v2.12/me?fields=name,first_name,picture,last_name,email&access_token=${accessToken.token}'));
-        Map<String, dynamic> user = json.decode(graphResponse.body);
-        Map<String, dynamic> picture = user['picture'];
-        Map<String, dynamic> data = picture['data'];
+  //       var graphResponse = await http.get(Uri.parse(
+  //           'https://graph.facebook.com/v2.12/me?fields=name,first_name,picture,last_name,email&access_token=${accessToken.token}'));
+  //       Map<String, dynamic> user = json.decode(graphResponse.body);
+  //       Map<String, dynamic> picture = user['picture'];
+  //       Map<String, dynamic> data = picture['data'];
 
-        await ApiCall.fbLogin(user['id'], user['first_name'], user['last_name'],
-                user['email'], data['url'])
-            .then((value) async {
-          MyConstants.hideLoadingBar();
-          if (value.statusCode == 200) {
-            facebookLoginModel = LoginModel.fromJson(jsonDecode(value.body));
-            final result =
-                await mySharedPreferennce.LoginSession(facebookLoginModel);
-            print("savingResponse" + result.toString());
-            Navigator.of(context).pushNamedAndRemoveUntil(
-                '/home', (Route<dynamic> route) => false);
-          } else {
-            _scaffoldKey.currentState.showSnackBar(SnackBar(
-              content: Text(
-                jsonDecode(value.body)['message'],
-                style: TextStyle(color: Colors.white),
-              ),
-              backgroundColor: Colors.red,
-            ));
-          }
-        }).catchError((onError) {});
+  //       await ApiCall.fbLogin(user['id'], user['first_name'], user['last_name'],
+  //               user['email'], data['url'])
+  //           .then((value) async {
+  //         MyConstants.hideLoadingBar();
+  //         if (value.statusCode == 200) {
+  //           facebookLoginModel = LoginModel.fromJson(jsonDecode(value.body));
+  //           final result =
+  //               await mySharedPreferennce.LoginSession(facebookLoginModel);
+  //           print("savingResponse" + result.toString());
+  //           Navigator.of(context).pushNamedAndRemoveUntil(
+  //               '/home', (Route<dynamic> route) => false);
+  //         } else {
+  //           _scaffoldKey.currentState.showSnackBar(SnackBar(
+  //             content: Text(
+  //               jsonDecode(value.body)['message'],
+  //               style: TextStyle(color: Colors.white),
+  //             ),
+  //             backgroundColor: Colors.red,
+  //           ));
+  //         }
+  //       }).catchError((onError) {});
 
-        // var graphResponseFeed = await http.get('https://graph.facebook.com/v2.12/me/feed?fields=message&access_token=${accessToken.token}');
-        // var data1 = json.decode(graphResponseFeed.body);
-        // print(data1);
+  //       // var graphResponseFeed = await http.get('https://graph.facebook.com/v2.12/me/feed?fields=message&access_token=${accessToken.token}');
+  //       // var data1 = json.decode(graphResponseFeed.body);
+  //       // print(data1);
 
-        // me?fields=id,name,feed{message,attachments}
-        // var graphResponseFeed1 = await http.get('https://graph.facebook.com/v2.12/me?fields=id,name{feed,attachments,message}&access_token=${accessToken.token}');
-        // var data1l = json.decode(graphResponseFeed1.body);
-        // Map<String,dynamic> root = json.decode(graphResponseFeed1.body);
-        // Map <String,dynamic> feed = root['feed'];
-        // var fdata = feed['data'];
-        //
-        // if(fdata!=null){
-        //   for (var i = 0; i < fdata.length; i++) {
-        //     var qq = fdata[i];
-        //     // var pp = qq['attachments'];
-        //     if(qq['attachments']==null){
-        //       i++;
-        //     }else{
-        //       Map <String,dynamic> pp = qq['attachments'];
-        //       var nn = pp['data'];
-        //       for(var j =0; j< nn.length; j++){
-        //         var mm = nn[j];
-        //         var jj = mm['media'];
-        //         var img = jj['image'];
-        //         var src = img['src'];
-        //         print(src);
-        //         Util.descriptionList.add(mm['description']);
-        //         Util.mediaList.add(img['src']);
-        //         // Util.listItems.add(new ListItem(mm['description'], img['src']));
-        //       }
-        //     }
-        //     Navigator.pushReplacementNamed(context, '/home');
-        //   }
-        // }else{
-        //   Navigator.pushReplacementNamed(context, '/home');
-        // }
-        break;
-      case FacebookLoginStatus.cancelledByUser:
-        _scaffoldKey.currentState.showSnackBar(SnackBar(
-          content: Text(
-            'Login cancelled by the user.',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.red,
-        ));
-        break;
-      case FacebookLoginStatus.error:
-        _scaffoldKey.currentState.showSnackBar(SnackBar(
-          content: Text(
-            'Something went wrong with the login process.\n'
-            'Here\'s the error Facebook gave us: ${result.toString()}',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.red,
-        ));
-        break;
-    }
-  }
+  //       // me?fields=id,name,feed{message,attachments}
+  //       // var graphResponseFeed1 = await http.get('https://graph.facebook.com/v2.12/me?fields=id,name{feed,attachments,message}&access_token=${accessToken.token}');
+  //       // var data1l = json.decode(graphResponseFeed1.body);
+  //       // Map<String,dynamic> root = json.decode(graphResponseFeed1.body);
+  //       // Map <String,dynamic> feed = root['feed'];
+  //       // var fdata = feed['data'];
+  //       //
+  //       // if(fdata!=null){
+  //       //   for (var i = 0; i < fdata.length; i++) {
+  //       //     var qq = fdata[i];
+  //       //     // var pp = qq['attachments'];
+  //       //     if(qq['attachments']==null){
+  //       //       i++;
+  //       //     }else{
+  //       //       Map <String,dynamic> pp = qq['attachments'];
+  //       //       var nn = pp['data'];
+  //       //       for(var j =0; j< nn.length; j++){
+  //       //         var mm = nn[j];
+  //       //         var jj = mm['media'];
+  //       //         var img = jj['image'];
+  //       //         var src = img['src'];
+  //       //         print(src);
+  //       //         Util.descriptionList.add(mm['description']);
+  //       //         Util.mediaList.add(img['src']);
+  //       //         // Util.listItems.add(new ListItem(mm['description'], img['src']));
+  //       //       }
+  //       //     }
+  //       //     Navigator.pushReplacementNamed(context, '/home');
+  //       //   }
+  //       // }else{
+  //       //   Navigator.pushReplacementNamed(context, '/home');
+  //       // }
+  //       break;
+  //     case FacebookLoginStatus.cancelledByUser:
+  //       _scaffoldKey.currentState.showSnackBar(SnackBar(
+  //         content: Text(
+  //           'Login cancelled by the user.',
+  //           style: TextStyle(color: Colors.white),
+  //         ),
+  //         backgroundColor: Colors.red,
+  //       ));
+  //       break;
+  //     case FacebookLoginStatus.error:
+  //       _scaffoldKey.currentState.showSnackBar(SnackBar(
+  //         content: Text(
+  //           'Something went wrong with the login process.\n'
+  //           'Here\'s the error Facebook gave us: ${result.toString()}',
+  //           style: TextStyle(color: Colors.white),
+  //         ),
+  //         backgroundColor: Colors.red,
+  //       ));
+  //       break;
+  //   }
+  // }
 }
