@@ -7,17 +7,14 @@ import 'package:marked/Utils/HexColor.dart';
 // import 'package:marked/drawer/Drawer.dart';
 
 class HelpPage extends StatefulWidget {
-
   @override
   _HelpPageState createState() => new _HelpPageState();
 }
 
 class _HelpPageState extends State<HelpPage> {
-
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  double height = MyConstants.height,
-      width = MyConstants.width;
+  double height = MyConstants.height, width = MyConstants.width;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +25,14 @@ class _HelpPageState extends State<HelpPage> {
       appBar: AppBar(
         leading: GestureDetector(
             onTap: () => Navigator.pop(context),
-            child: Icon(Icons.arrow_back_ios,color: Colors.white,)
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            )),
+        title: Text(
+          "Help",
+          style: TextStyle(color: Colors.white),
         ),
-        title:Text("Help", style: TextStyle(color: Colors.white),),
-
         centerTitle: true,
         elevation: 0,
         flexibleSpace: Container(
@@ -39,7 +40,10 @@ class _HelpPageState extends State<HelpPage> {
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [HexToColor(MyConstants.appbarClrs[0]),HexToColor(MyConstants.appbarClrs[1])]),
+                colors: [
+                  HexToColor(MyConstants.appbarClrs[0]),
+                  HexToColor(MyConstants.appbarClrs[1])
+                ]),
           ),
         ),
       ),
@@ -67,29 +71,41 @@ class _HelpPageState extends State<HelpPage> {
                   topLeft: Radius.circular(width / 12),
                 ),
                 image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/gray_bg.png')
-                )
-            ),
+                    fit: BoxFit.fill, image: AssetImage('assets/gray_bg.png'))),
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   Card(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(width/30))
-                    ),
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(width / 30))),
                     child: Container(
                       padding: EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Get Started',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 16),),
-                          SizedBox(height: height/40,),
+                          Text(
+                            'Get Started',
+                            style: TextStyle(
+                                color: HexToColor(MyConstants.greyClr),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/howToSave'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/howToSave'),
                             child: Row(
                               children: [
-                                Text('How to save',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'How to save',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
@@ -101,86 +117,153 @@ class _HelpPageState extends State<HelpPage> {
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(width/30))
-                    ),
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(width / 30))),
                     child: Container(
                       padding: EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('How to',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 16),),
-                          SizedBox(height: height/40,),
+                          Text(
+                            'How to',
+                            style: TextStyle(
+                                color: HexToColor(MyConstants.greyClr),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/appBasics'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/appBasics'),
                             child: Row(
                               children: [
-                                Text('App basics',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'App basics',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
                             ),
                           ),
-                          SizedBox(height: height/40,),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/read'),
+                            onTap: () => Navigator.pushNamed(context, '/read'),
                             child: Row(
                               children: [
-                                Text('Read in App',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Read in App',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
                             ),
                           ),
-                          SizedBox(height: height/40,),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/sendToFriends'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/sendToFriends'),
                             child: Row(
                               children: [
-                                Text('Send to friends',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Send to friends',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
                             ),
                           ),
-                          SizedBox(height: height/40,),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/favouriteHelp'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/favouriteHelp'),
                             child: Row(
                               children: [
-                                Text('Favourite, Archive Bulk Edit',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Favourite, Archive Bulk Edit',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
                             ),
                           ),
-                          SizedBox(height: height/40,),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/tagsHelp'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/tagsHelp'),
                             child: Row(
                               children: [
-                                Text('Tags',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Tags',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
                             ),
                           ),
-                          SizedBox(height: height/40,),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/sync'),
+                            onTap: () => Navigator.pushNamed(context, '/sync'),
                             child: Row(
                               children: [
-                                Text('Sync and Download',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Sync and Download',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
                             ),
                           ),
-                          SizedBox(height: height/40,),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/manageData'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/manageData'),
                             child: Row(
                               children: [
-                                Text('Manage your Data',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Manage your Data',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],
@@ -192,56 +275,86 @@ class _HelpPageState extends State<HelpPage> {
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(width/30))
-                    ),
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(width / 30))),
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      // padding: EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Talk to human',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 16),),
-                          SizedBox(height: height/40,),
-                          GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/searchOnline'),
-                            child: Row(
-                              children: [
-                                Text('Search online support',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: height/40,),
-                          GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/emailUs'),
-                            child: Row(
-                              children: [
-                                Text('Email us',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                          ),
+                          // Text(
+                          //   'Talk to human',
+                          //   style: TextStyle(
+                          //       color: HexToColor(MyConstants.greyClr),
+                          //       fontWeight: FontWeight.w600,
+                          //       fontSize: 16),
+                          // ),
+                          // SizedBox(
+                          //   height: height / 40,   
+                          // ),
+                          // GestureDetector(
+                          //   onTap: () =>
+                          //       Navigator.pushNamed(context, '/searchOnline'),
+                          //   child: Row(
+                          //     children: [
+                          //       Text(
+                          //         'Search online support',
+                          //         style: TextStyle(
+                          //             color: Colors.black87,
+                          //             fontWeight: FontWeight.w600,
+                          //             fontSize: 16),
+                          //       ),
+                          //       Expanded(child: Container()),
+                          //       Icon(Icons.arrow_forward_ios),
+                          //     ],
+                          //   ),
+                          // ),
+                          // SizedBox(height: height/40,),
+                          // GestureDetector(
+                          //   onTap: ()=>Navigator.pushNamed(context, '/emailUs'),
+                          //   child: Row(
+                          //     children: [
+                          //       Text('Email us',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                          //       Expanded(child: Container()),
+                          //       Icon(Icons.arrow_forward_ios),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(width/30))
-                    ),
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(width / 30))),
                     child: Container(
                       padding: EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Developers',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 16),),
-                          SizedBox(height: height/40,),
+                          Text(
+                            'Developers',
+                            style: TextStyle(
+                                color: HexToColor(MyConstants.greyClr),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16),
+                          ),
+                          SizedBox(
+                            height: height / 40,
+                          ),
                           GestureDetector(
-                            onTap: ()=>Navigator.pushNamed(context, '/reverseAuth'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/reverseAuth'),
                             child: Row(
                               children: [
-                                Text('Test reverse authentication',style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16),),
+                                Text(
+                                  'Test reverse authentication',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16),
+                                ),
                                 Expanded(child: Container()),
                                 Icon(Icons.arrow_forward_ios),
                               ],

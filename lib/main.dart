@@ -125,9 +125,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Container(
           width: 300,
-          height: 150,
+          height: 130,
           child: Image.asset(
-            'assets/Logo-2.png',
+            'assets/marcit_logo.png',
             fit: BoxFit.fill,
           ),
         ),

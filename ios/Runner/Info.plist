@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Mark It</string>
+	<string>marcit</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Use Gallery for images</string>
 	<key>NSCameraUsageDescription</key>

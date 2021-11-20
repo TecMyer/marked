@@ -147,22 +147,22 @@ class _OptionsPageState extends State<OptionsPage> {
                                     Icon(Icons.arrow_forward_ios),
                                   ],
                                 ),
-                                SizedBox(
-                                  height: height / 40,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Restore Existing Subscription',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 16),
-                                    ),
-                                    Expanded(child: Container()),
-                                    Icon(Icons.arrow_forward_ios),
-                                  ],
-                                ),
+                                // SizedBox(
+                                //   height: height / 40,
+                                // ),
+                                // Row(
+                                //   children: [
+                                //     Text(
+                                //       'Restore Existing Subscription',
+                                //       style: TextStyle(
+                                //           color: Colors.black87,
+                                //           fontWeight: FontWeight.w600,
+                                //           fontSize: 16),
+                                //     ),
+                                //     Expanded(child: Container()),
+                                //     Icon(Icons.arrow_forward_ios),
+                                //   ],
+                                // ),
                                 SizedBox(
                                   height: height / 40,
                                 ),
@@ -238,804 +238,804 @@ class _OptionsPageState extends State<OptionsPage> {
                         ],
                       ),
                     ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(width / 30)),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'App Themes Coming Soon',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                dummyList.clear();
-                                dummyList.addAll(themeOptions);
-                                title = 'Theme';
-                                setState(() {
-                                  isOptionVisible = true;
-                                });
-                              },
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Theme',
-                                    style: TextStyle(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 15),
-                                  ),
-                                  Expanded(child: Container()),
-                                  Icon(Icons.arrow_forward_ios),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Switch theme automatically',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    Text(
-                                      'Automatically switch between dark or \nlight theme based on screen brightness.',
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                          color: HexToColor(
-                                            MyConstants.greyClr,
-                                          ),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                // SizedBox(width: width/20,),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isSwitchThemeAutomatically,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isSwitchThemeAutomatically = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Match system theme',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isMatchSystemTheme,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isMatchSystemTheme = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(width / 30))),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Reading Features Coming Soon',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Open Best view',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    Text(
-                                      'Marked will automatically decide the\n best view (Article or web view) to show.',
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                          color: HexToColor(
-                                            MyConstants.greyClr,
-                                          ),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                // SizedBox(width: width/20,),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isOpenBestView,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isOpenBestView = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Scrollbar',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isScrollbar,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isScrollbar = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Page flipping',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    Text(
-                                      'Enable page flipping by swiping\nleft and right.',
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                          color: HexToColor(
-                                            MyConstants.greyClr,
-                                          ),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                // SizedBox(width: width/20,),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isPageFlipping,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isPageFlipping = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Justify text',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    Text(
-                                      'Justify and hyphenate text in Article\n view when possible.',
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                          color: HexToColor(
-                                            MyConstants.greyClr,
-                                          ),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                // SizedBox(width: width/20,),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isJustifyText,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isJustifyText = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Continue reading',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    Text(
-                                      'Display the last item I was in the\n middle ofwhen I return to pocket.',
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                          color: HexToColor(
-                                            MyConstants.greyClr,
-                                          ),
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
-                                    ),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                // SizedBox(width: width/20,),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isContinueReading,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isContinueReading = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                dummyList.clear();
-                                dummyList.addAll(browseOptions);
-                                title = 'Set Browser Preference';
-                                setState(() {
-                                  isOptionVisible = true;
-                                });
-                              },
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Set Browser Preference',
-                                    style: TextStyle(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16),
-                                  ),
-                                  Expanded(child: Container()),
-                                  Text(
-                                    'Safari',
-                                    style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14),
-                                  ),
-                                  Icon(Icons.arrow_forward_ios),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(width / 30))),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Offline Downloading',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Download Best View',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isDownloadBestView,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isDownloadBestView = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Download only on Wi-Fi',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isDownloadOnlyWifi,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isDownloadOnlyWifi = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Use mobile user argent',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isUseMobileUser,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isUseMobileUser = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Clear Download Files',
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16),
-                                ),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(width / 30))),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'List',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Refresh when app opens',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isRefreshOnOpen,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isRefreshOnOpen = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            InkWell(
-                              onTap: () {
-                                dummyList.clear();
-                                dummyList.addAll(sortOptions);
-                                title = 'Sort';
-                                setState(() {
-                                  isOptionVisible = true;
-                                });
-                              },
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Sort',
-                                    style: TextStyle(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16),
-                                  ),
-                                  Expanded(child: Container()),
-                                  Text(
-                                    'Newest First',
-                                    style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14),
-                                  ),
-                                  Icon(Icons.arrow_forward_ios),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Show app badge count',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 15),
-                                    ),
-                                    // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
-                                  ],
-                                ),
-                                Expanded(child: Container()),
-                                SizedBox(
-                                  width: width / 20,
-                                ),
-                                Switch(
-                                    activeTrackColor:
-                                        Colors.lightGreen.shade500,
-                                    activeColor: Colors.white,
-                                    inactiveTrackColor:
-                                        HexToColor(MyConstants.lightGreyClr),
-                                    inactiveThumbColor: Colors.white,
-                                    value: isShowBadgeCount,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        isShowBadgeCount = value;
-                                      });
-                                    }),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 70,
-                            ),
-                            InkWell(
-                              onTap: () => Navigator.pushNamed(
-                                  context, '/manageSiteLogin'),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Manage site logins',
-                                    style: TextStyle(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16),
-                                  ),
-                                  Expanded(child: Container()),
-                                  Icon(Icons.arrow_forward_ios),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(width / 30))),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Notification',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Push notification settings',
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16),
-                                ),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(width / 30))),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Linked Accounts',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Twitter',
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16),
-                                ),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(width / 30))),
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'About',
-                              style: TextStyle(
-                                  color: HexToColor(MyConstants.greyClr),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Follow @app on Twitter',
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16),
-                                ),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Follow us in Facebook',
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16),
-                                ),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height / 40,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Legal & Privacy',
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16),
-                                ),
-                                Expanded(child: Container()),
-                                Icon(Icons.arrow_forward_ios),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(width / 30)),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'App Themes Coming Soon',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         InkWell(
+                    //           onTap: () {
+                    //             dummyList.clear();
+                    //             dummyList.addAll(themeOptions);
+                    //             title = 'Theme';
+                    //             setState(() {
+                    //               isOptionVisible = true;
+                    //             });
+                    //           },
+                    //           child: Row(
+                    //             children: [
+                    //               Text(
+                    //                 'Theme',
+                    //                 style: TextStyle(
+                    //                     color: Colors.black87,
+                    //                     fontWeight: FontWeight.w600,
+                    //                     fontSize: 15),
+                    //               ),
+                    //               Expanded(child: Container()),
+                    //               Icon(Icons.arrow_forward_ios),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               crossAxisAlignment: CrossAxisAlignment.start,
+                    //               children: [
+                    //                 Text(
+                    //                   'Switch theme automatically',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 Text(
+                    //                   'Automatically switch between dark or \nlight theme based on screen brightness.',
+                    //                   maxLines: 2,
+                    //                   style: TextStyle(
+                    //                       color: HexToColor(
+                    //                         MyConstants.greyClr,
+                    //                       ),
+                    //                       fontWeight: FontWeight.w400,
+                    //                       fontSize: 12),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             // SizedBox(width: width/20,),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isSwitchThemeAutomatically,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isSwitchThemeAutomatically = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Match system theme',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isMatchSystemTheme,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isMatchSystemTheme = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius:
+                    //           BorderRadius.all(Radius.circular(width / 30))),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'Reading Features Coming Soon',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               crossAxisAlignment: CrossAxisAlignment.start,
+                    //               children: [
+                    //                 Text(
+                    //                   'Open Best view',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 Text(
+                    //                   'Marked will automatically decide the\n best view (Article or web view) to show.',
+                    //                   maxLines: 2,
+                    //                   style: TextStyle(
+                    //                       color: HexToColor(
+                    //                         MyConstants.greyClr,
+                    //                       ),
+                    //                       fontWeight: FontWeight.w400,
+                    //                       fontSize: 12),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             // SizedBox(width: width/20,),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isOpenBestView,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isOpenBestView = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Scrollbar',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isScrollbar,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isScrollbar = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               crossAxisAlignment: CrossAxisAlignment.start,
+                    //               children: [
+                    //                 Text(
+                    //                   'Page flipping',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 Text(
+                    //                   'Enable page flipping by swiping\nleft and right.',
+                    //                   maxLines: 2,
+                    //                   style: TextStyle(
+                    //                       color: HexToColor(
+                    //                         MyConstants.greyClr,
+                    //                       ),
+                    //                       fontWeight: FontWeight.w400,
+                    //                       fontSize: 12),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             // SizedBox(width: width/20,),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isPageFlipping,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isPageFlipping = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               crossAxisAlignment: CrossAxisAlignment.start,
+                    //               children: [
+                    //                 Text(
+                    //                   'Justify text',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 Text(
+                    //                   'Justify and hyphenate text in Article\n view when possible.',
+                    //                   maxLines: 2,
+                    //                   style: TextStyle(
+                    //                       color: HexToColor(
+                    //                         MyConstants.greyClr,
+                    //                       ),
+                    //                       fontWeight: FontWeight.w400,
+                    //                       fontSize: 12),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             // SizedBox(width: width/20,),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isJustifyText,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isJustifyText = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               crossAxisAlignment: CrossAxisAlignment.start,
+                    //               children: [
+                    //                 Text(
+                    //                   'Continue reading',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 Text(
+                    //                   'Display the last item I was in the\n middle ofwhen I return to pocket.',
+                    //                   maxLines: 2,
+                    //                   style: TextStyle(
+                    //                       color: HexToColor(
+                    //                         MyConstants.greyClr,
+                    //                       ),
+                    //                       fontWeight: FontWeight.w400,
+                    //                       fontSize: 12),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             // SizedBox(width: width/20,),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isContinueReading,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isContinueReading = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         InkWell(
+                    //           onTap: () {
+                    //             dummyList.clear();
+                    //             dummyList.addAll(browseOptions);
+                    //             title = 'Set Browser Preference';
+                    //             setState(() {
+                    //               isOptionVisible = true;
+                    //             });
+                    //           },
+                    //           child: Row(
+                    //             children: [
+                    //               Text(
+                    //                 'Set Browser Preference',
+                    //                 style: TextStyle(
+                    //                     color: Colors.black87,
+                    //                     fontWeight: FontWeight.w600,
+                    //                     fontSize: 16),
+                    //               ),
+                    //               Expanded(child: Container()),
+                    //               Text(
+                    //                 'Safari',
+                    //                 style: TextStyle(
+                    //                     color: Colors.black54,
+                    //                     fontWeight: FontWeight.w400,
+                    //                     fontSize: 14),
+                    //               ),
+                    //               Icon(Icons.arrow_forward_ios),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius:
+                    //           BorderRadius.all(Radius.circular(width / 30))),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'Offline Downloading',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Download Best View',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isDownloadBestView,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isDownloadBestView = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Download only on Wi-Fi',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isDownloadOnlyWifi,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isDownloadOnlyWifi = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Use mobile user argent',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isUseMobileUser,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isUseMobileUser = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Text(
+                    //               'Clear Download Files',
+                    //               style: TextStyle(
+                    //                   color: Colors.black87,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   fontSize: 16),
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             Icon(Icons.arrow_forward_ios),
+                    //           ],
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius:
+                    //           BorderRadius.all(Radius.circular(width / 30))),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'List',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Refresh when app opens',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isRefreshOnOpen,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isRefreshOnOpen = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         InkWell(
+                    //           onTap: () {
+                    //             dummyList.clear();
+                    //             dummyList.addAll(sortOptions);
+                    //             title = 'Sort';
+                    //             setState(() {
+                    //               isOptionVisible = true;
+                    //             });
+                    //           },
+                    //           child: Row(
+                    //             children: [
+                    //               Text(
+                    //                 'Sort',
+                    //                 style: TextStyle(
+                    //                     color: Colors.black87,
+                    //                     fontWeight: FontWeight.w600,
+                    //                     fontSize: 16),
+                    //               ),
+                    //               Expanded(child: Container()),
+                    //               Text(
+                    //                 'Newest First',
+                    //                 style: TextStyle(
+                    //                     color: Colors.black54,
+                    //                     fontWeight: FontWeight.w400,
+                    //                     fontSize: 14),
+                    //               ),
+                    //               Icon(Icons.arrow_forward_ios),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Column(
+                    //               children: [
+                    //                 Text(
+                    //                   'Show app badge count',
+                    //                   style: TextStyle(
+                    //                       color: Colors.black87,
+                    //                       fontWeight: FontWeight.w600,
+                    //                       fontSize: 15),
+                    //                 ),
+                    //                 // Text('Automatically switch between dark or light theme based on screen brightness.',style: TextStyle(color: HexToColor(MyConstants.greyClr),fontWeight: FontWeight.w600,fontSize: 12),),
+                    //               ],
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             SizedBox(
+                    //               width: width / 20,
+                    //             ),
+                    //             Switch(
+                    //                 activeTrackColor:
+                    //                     Colors.lightGreen.shade500,
+                    //                 activeColor: Colors.white,
+                    //                 inactiveTrackColor:
+                    //                     HexToColor(MyConstants.lightGreyClr),
+                    //                 inactiveThumbColor: Colors.white,
+                    //                 value: isShowBadgeCount,
+                    //                 onChanged: (value) {
+                    //                   setState(() {
+                    //                     isShowBadgeCount = value;
+                    //                   });
+                    //                 }),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 70,
+                    //         ),
+                    //         InkWell(
+                    //           onTap: () => Navigator.pushNamed(
+                    //               context, '/manageSiteLogin'),
+                    //           child: Row(
+                    //             children: [
+                    //               Text(
+                    //                 'Manage site logins',
+                    //                 style: TextStyle(
+                    //                     color: Colors.black87,
+                    //                     fontWeight: FontWeight.w600,
+                    //                     fontSize: 16),
+                    //               ),
+                    //               Expanded(child: Container()),
+                    //               Icon(Icons.arrow_forward_ios),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius:
+                    //           BorderRadius.all(Radius.circular(width / 30))),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'Notification',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Text(
+                    //               'Push notification settings',
+                    //               style: TextStyle(
+                    //                   color: Colors.black87,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   fontSize: 16),
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             Icon(Icons.arrow_forward_ios),
+                    //           ],
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius:
+                    //           BorderRadius.all(Radius.circular(width / 30))),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'Linked Accounts',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Text(
+                    //               'Twitter',
+                    //               style: TextStyle(
+                    //                   color: Colors.black87,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   fontSize: 16),
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             Icon(Icons.arrow_forward_ios),
+                    //           ],
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // Card(
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius:
+                    //           BorderRadius.all(Radius.circular(width / 30))),
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(20),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Text(
+                    //           'About',
+                    //           style: TextStyle(
+                    //               color: HexToColor(MyConstants.greyClr),
+                    //               fontWeight: FontWeight.w600,
+                    //               fontSize: 16),
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Text(
+                    //               'Follow @app on Twitter',
+                    //               style: TextStyle(
+                    //                   color: Colors.black87,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   fontSize: 16),
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             Icon(Icons.arrow_forward_ios),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Text(
+                    //               'Follow us in Facebook',
+                    //               style: TextStyle(
+                    //                   color: Colors.black87,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   fontSize: 16),
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             Icon(Icons.arrow_forward_ios),
+                    //           ],
+                    //         ),
+                    //         SizedBox(
+                    //           height: height / 40,
+                    //         ),
+                    //         Row(
+                    //           children: [
+                    //             Text(
+                    //               'Legal & Privacy',
+                    //               style: TextStyle(
+                    //                   color: Colors.black87,
+                    //                   fontWeight: FontWeight.w600,
+                    //                   fontSize: 16),
+                    //             ),
+                    //             Expanded(child: Container()),
+                    //             Icon(Icons.arrow_forward_ios),
+                    //           ],
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     Text(
                       'Version  ' + version,
                       style: TextStyle(

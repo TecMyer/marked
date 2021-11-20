@@ -52,7 +52,7 @@ class _LoginState extends State<LoginPage> {
                 left: width * 0.05,
                 child: Image.asset(
                   'assets/light_logo.png',
-                  height: height * 0.07,
+                  height: height * 0.05,
                 )),
             Positioned(
                 top: 0,
